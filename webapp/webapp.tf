@@ -1,5 +1,4 @@
 locals {
-<<<<<<< HEAD
   asp_name            = "asp-example"
   resource_group      = "RG-Web"
   as_name             = "web-example"
@@ -12,12 +11,6 @@ data "azurerm_subnet" "web" {
   name                 = local.subnet_name
   virtual_network_name = local.vnet_name
   resource_group_name  = local.vnet_resource_group
-=======
-  asp_name       = "asp-example"
-  resource_group = "RG-Web"
-
-  as_name = "web-example"
->>>>>>> 7c9f4eb... Add webapp
 }
 
 resource "azurerm_resource_group" "webapp" {
@@ -43,7 +36,6 @@ resource "azurerm_app_service" "example" {
   app_service_plan_id = azurerm_app_service_plan.example.id
 
   site_config {
-<<<<<<< HEAD
     always_on = true
   }
 }
@@ -52,8 +44,3 @@ resource "azurerm_app_service_virtual_network_swift_connection" "vnet_integratio
   app_service_id = azurerm_app_service.example.id
   subnet_id      = data.azurerm_subnet.web.id
 }
-=======
-    always_on            = true
-  }
-}
->>>>>>> 7c9f4eb... Add webapp
